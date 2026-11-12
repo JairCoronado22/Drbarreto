@@ -1,0 +1,127 @@
+DR. VICENTE BARRETO PEÑA — SITIO INFORMATIVO
+=========================================
+
+ABRIR LA WEB
+1. Extrae TODO el ZIP (no abras el HTML dentro del archivo comprimido).
+2. Abre la carpeta dr-barreto.
+3. Haz doble clic en index.html.
+No necesitas instalar nada, usar terminal, localhost, servidor ni compilar.
+HTML, CSS, JavaScript y Bootstrap 5.3.3 están incluidos localmente.
+Internet solo es necesario para WhatsApp, Google Maps y enlaces externos.
+
+PÁGINAS
+index.html                 Clínica: las siete secciones solicitadas, en orden.
+tratamientos.html          Cinco servicios, explicación y proceso de atención.
+casos.html                 Espacios de antes/después y contexto clínico.
+testimonios.html           Espacio reservado para reseñas verificadas.
+galeria.html               Galería con filtros de consultorio, tecnología y doctor.
+sobre-mi.html              Perfil y enfoque profesional.
+preguntas-frecuentes.html  Diez preguntas desplegables.
+cursos.html                Página reservada para la segunda maqueta.
+privacidad.html            Descripción de WhatsApp, mapa y datos.
+
+ARCHIVOS COMPARTIDOS
+assets/css/styles.css       Diseño, colores y adaptaciones móviles.
+assets/js/main.js           Menú móvil, galería, mensaje de cita y configuración.
+assets/js/config.js         Dirección, horarios y mapa definitivo.
+assets/vendor/bootstrap.min.css   Bootstrap local; incluye aviso de licencia.
+assets/img/favicon.svg      Símbolo gráfico del sitio (no fotografía clínica).
+
+ORDEN DE LA PORTADA
+1. Gancho, foto pendiente, llamada a agendar y cifras de confianza.
+2. Microscopio y beneficios para el paciente.
+3. Cinco tratamientos y tarjeta de evaluación.
+4. Casos y espacio para testimonios.
+5. Franja para abordar el miedo, en azul oscuro.
+6. Perfil del Dr. Barreto.
+7. Contacto, mapa y selección del motivo de consulta.
+La franja de miedo es azul: la guía de color tiene prioridad sobre el fondo
+coral de la maqueta. El coral se usa exclusivamente en botones para agendar.
+
+PALETA EXACTA (variables al inicio de styles.css)
+Azul principal #2277BD / claro #4A9BD8 / oscuro #16445F
+Coral #E8514B / blanco #FFFFFF / fondo suave #F4F8FB / texto #17313F
+La tipografía es local del sistema para no depender de servicios externos.
+
+DATOS USADOS DE LA MAQUETA
+Nombre: Dr. Vicente Barreto Peña.
+Más de 10 años de experiencia clínica y académica.
+Más de 5000 tratamientos; 100% práctica bajo microscopio.
+Docencia universitaria USMP. Aumento indicado: hasta 20x.
+San Martín de Porres, Lima. Lunes a sábado, horas pendientes.
+WhatsApp proporcionado: +51 960 359 369.
+Estas afirmaciones proceden de los materiales suministrados, no de una
+verificación independiente. Confirmarlas antes de publicar la web definitiva.
+No se han añadido títulos, colegiatura, premios ni certificados inventados.
+
+PENDIENTES PARA LA VERSIÓN DEFINITIVA
+- Retrato profesional para portada y segunda fotografía para perfil.
+- Fotografía real del microscopio y del consultorio.
+- Radiografías antes/después, explicación y fechas de seguimiento.
+- Testimonios reales autorizados; la maqueta no verifica las citas de pacientes.
+- Dirección exacta, referencia de llegada y horario detallado.
+- Colegiatura y credenciales que el doctor desee publicar.
+- Maqueta y contenidos definitivos de Cursos.
+
+CÓMO AÑADIR FOTOS
+Guarda los archivos optimizados dentro de assets/img/.
+En el HTML correspondiente, reemplaza el bloque completo
+<div class="media-placeholder ...">...</div> por, por ejemplo:
+<img src="assets/img/dr-barreto.webp" alt="Dr. Vicente Barreto Peña"
+     width="800" height="1000" class="real-photo">
+Añade en styles.css:
+.real-photo { width:100%; height:100%; min-height:340px;
+  max-height:520px; object-fit:cover; border-radius:8px; }
+En la galería conserva el figure con data-category para mantener los filtros.
+Usa textos alternativos descriptivos. No publiques datos identificables en
+radiografías; añade únicamente material con autorización para su publicación.
+Los marcadores son deliberadamente explícitos: no representan fotos reales.
+
+MAPA Y DIRECCIÓN
+El mapa actual muestra San Martín de Porres como zona de referencia.
+NO marca una clínica ni se presenta como la dirección exacta.
+El botón 'Solicitar ubicación' pregunta la dirección por WhatsApp.
+Cuando dispongas de la ubicación:
+1. Abre Google Maps, ubica el consultorio y elige Compartir > Insertar mapa.
+2. Copia SOLO la URL del atributo src del iframe.
+3. En assets/js/config.js completa address, hours, mapsEmbedUrl y
+   mapsDirectionsUrl (enlace de Maps para llegar al consultorio).
+4. Para que la dirección también se vea sin JavaScript, actualiza además
+   los textos y el iframe de index.html. Actualiza privacidad.html.
+Solo se aceptan en configuración URLs HTTPS de Google Maps.
+
+WHATSAPP Y CONTACTO
+Todos los botones llevan a https://wa.me/51960359369.
+Los botones de tratamiento incluyen mensajes específicos.
+El selector de contacto prepara un mensaje; no envía mensajes por sí solo.
+La cita requiere confirmación del consultorio: no hay calendario ni backend.
+No se guardan datos de pacientes en esta web ni se simula una reserva.
+
+CURSOS — SEGUNDA ETAPA
+El menú ya enlaza cursos.html. Sustituye el contenido de <main> conservando
+el encabezado, pie, CSS y JavaScript compartidos. Están enumeradas las seis
+secciones previstas, sin inventar precios, fechas ni ofertas.
+
+VERIFICACIÓN DE ESTA ENTREGA
+Comprobación estática de páginas, archivos, enlaces internos y fragmentos.
+Comprobación de sintaxis de los dos archivos JavaScript con Node.
+No se inició servidor local ni localhost, ni se hizo una revisión visual en
+navegador. Revisa la apertura directa en tus dispositivos antes de publicar.
+Diseño preparado para escritorio, tableta y móvil, con menú accesible,
+foco visible, enlace para saltar al contenido y movimiento reducido.
+
+REFERENCIAS DE INFORMACIÓN GENERAL
+Materiales educativos de American Association of Endodontists:
+https://www.aae.org/patients/root-canal-treatment/
+https://www.aae.org/patients/root-canal-treatment/what-is-a-root-canal/root-canal-explained/
+https://www.aae.org/patients/root-canal-treatment/endodontic-treatment-options/
+https://www.aae.org/specialty/clinical-resources/microscopes-in-endodontics/
+La información es orientativa y no sustituye la evaluación individual.
+Se evitó prometer ausencia absoluta de dolor o resultados garantizados.
+La referencia de Netlify no fue accesible durante esta preparación; el diseño
+se construyó a partir de las dos imágenes y las instrucciones suministradas.
+
+LICENCIAS
+Bootstrap 5.3.3: Copyright 2011-2024 The Bootstrap Authors, licencia MIT.
+El aviso de licencia se conserva en assets/vendor/bootstrap.min.css.
+https://github.com/twbs/bootstrap/blob/v5.3.3/LICENSE
