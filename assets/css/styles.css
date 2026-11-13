@@ -149,7 +149,7 @@ img {
   align-items: center;
   white-space: nowrap;
   color: var(--blue-dark);
-  font-size: 24px;
+  font-size: 27px;
   font-weight: 700;
   text-decoration: none;
   letter-spacing: -0.04em;
@@ -157,7 +157,7 @@ img {
 }
 .brand-sub {
   display: block;
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0.12em;
   margin-top: 8px;
   font-weight: 700;
@@ -685,6 +685,24 @@ img {
 .map-caption a {
   font-size: 12px;
 }
+.fear-questions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 20px;
+}
+.fear-questions a {
+  display: inline-block;
+  padding: 7px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 999px;
+  color: var(--white);
+  font-size: 13px;
+  text-decoration: none;
+}
+.fear-questions a:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
 .appointment-panel {
   margin-top: 60px;
   padding-top: 35px;
@@ -979,16 +997,7 @@ details p {
 }
 @media (max-width: 1199px) {
   .site-header nav {
-    gap: 14px;
-  }
-  .brand {
-    font-size: 21px;
-  }
-  .site-header nav > a:not(.btn) {
-    font-size: 11px;
-  }
-  .brand-sub {
-    font-size: 7px;
+    gap: 10px;
   }
   .small-cta {
     padding: 10px;
@@ -1000,7 +1009,7 @@ details p {
     flex-wrap: wrap;
   }
 }
-@media (max-width: 991px) {
+@media (max-width: 1099px) {
   .section {
     padding: 70px 0;
   }
@@ -1096,6 +1105,24 @@ details p {
 @media (max-width: 575px) {
   body {
     font-size: 15px;
+  }
+  .brand {
+    font-size: 22px;
+    gap: 2px;
+  }
+  .brand-sub {
+    font-size: 9px;
+    letter-spacing: 0.1em;
+  }
+  .menu-toggle {
+    padding: 8px 10px;
+    font-size: 0;
+  }
+  .menu-toggle span {
+    font-size: 18px;
+  }
+  .row.g-5 {
+    --bs-gutter-x: 2.75rem;
   }
   .container {
     padding-left: 22px;

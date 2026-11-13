@@ -30,6 +30,34 @@
   document
     .querySelectorAll("[data-year]")
     .forEach((el) => (el.textContent = new Date().getFullYear()));
+  const trackWhatsappClick = (url, text, onComplete) => {
+    const clickData = {
+      event: "whatsapp_click",
+      link_url: url,
+      link_text: text,
+      page_path: window.location.pathname,
+    };
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(clickData);
+    if (typeof window.gtag === "function") {
+      const eventData = { ...clickData };
+      delete eventData.event;
+      if (onComplete) {
+        let completed = false;
+        const complete = () => {
+          if (completed) return;
+          completed = true;
+          onComplete();
+        };
+        eventData.event_callback = complete;
+        eventData.event_timeout = 500;
+        window.setTimeout(complete, 600);
+      }
+      window.gtag("event", "whatsapp_click", eventData);
+    } else if (onComplete) {
+      onComplete();
+    }
+  };
   document.querySelectorAll("[data-filter]").forEach((button) =>
     button.addEventListener("click", () => {
       document.querySelectorAll("[data-filter]").forEach((b) => {
@@ -52,13 +80,34 @@
     ?.addEventListener("submit", (e) => {
       e.preventDefault();
       const reason = document.getElementById("reason").value;
-      window.location.href =
+      const url =
         "https://wa.me/51960359369?text=" +
         encodeURIComponent(
           `Hola, Dr. Barreto. Quisiera agendar una cita por: ${reason}. ¿Podrían indicarme disponibilidad y ubicación exacta?`,
         );
+      trackWhatsappClick(url, "Agendar por WhatsApp", () => {
+        window.location.href = url;
+      });
     });
   const config = window.CLINIC_CONFIG || {};
+  if (/^G-[A-Z0-9]+$/.test(config.gaMeasurementId || "")) {
+    const analyticsScript = document.createElement("script");
+    analyticsScript.async = true;
+    analyticsScript.src = `https://www.googletagmanager.com/gtag/js?id=${config.gaMeasurementId}`;
+    document.head.append(analyticsScript);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () {
+      window.dataLayer.push(arguments);
+    };
+    window.gtag("js", new Date());
+    window.gtag("config", config.gaMeasurementId);
+  }
+  document.addEventListener("click", (event) => {
+    if (!(event.target instanceof Element)) return;
+    const link = event.target.closest('a[href*="wa.me/"]');
+    if (!link) return;
+    trackWhatsappClick(link.href, link.textContent.trim());
+  });
   if (config.address)
     document
       .querySelectorAll("[data-address]")
@@ -74,11 +123,12 @@
     const frame = document.querySelector(".map-panel iframe");
     if (frame) {
       frame.src = config.mapsEmbedUrl;
-      frame.title = "Ubicación del consultorio del Dr. Barreto";
+      frame.title =
+        "Mapa con la dirección del consultorio del Dr. Barreto en Urb. Vipol Naranjal";
     }
     const caption = document.querySelector("[data-map-caption]");
     if (caption) {
-      caption.textContent = "Ubicación del consultorio";
+      caption.textContent = "Dirección del consultorio";
       caption.nextElementSibling.textContent =
         config.address || "Consulta los detalles antes de acudir.";
     }
@@ -91,6 +141,10 @@
   )
     document.querySelectorAll("[data-directions]").forEach((el) => {
       el.href = config.mapsDirectionsUrl;
-      el.textContent = "Cómo llegar ↗";
+      el.textContent = "Ver en Google Maps ↗";
     });
+  const linkedQuestion = document.getElementById(
+    window.location.hash.slice(1),
+  );
+  if (linkedQuestion instanceof HTMLDetailsElement) linkedQuestion.open = true;
 })();

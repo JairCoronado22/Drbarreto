@@ -1,4 +1,4 @@
-DR. VICENTE BARRETO PEÑA — SITIO INFORMATIVO
+DR. VICENTE MARTÍN BARRETO PEÑA — SITIO INFORMATIVO
 =========================================
 
 ABRIR LA WEB
@@ -10,7 +10,7 @@ HTML, CSS, JavaScript y Bootstrap 5.3.3 están incluidos localmente.
 Internet solo es necesario para WhatsApp, Google Maps y enlaces externos.
 
 PÁGINAS
-index.html                 Clínica: las siete secciones solicitadas, en orden.
+index.html                 Inicio: las secciones informativas y el contacto.
 tratamientos.html          Cinco servicios, explicación y proceso de atención.
 casos.html                 Espacios de antes/después y contexto clínico.
 testimonios.html           Espacio reservado para reseñas verificadas.
@@ -23,7 +23,8 @@ privacidad.html            Descripción de WhatsApp, mapa y datos.
 ARCHIVOS COMPARTIDOS
 assets/css/styles.css       Diseño, colores y adaptaciones móviles.
 assets/js/main.js           Menú móvil, galería, mensaje de cita y configuración.
-assets/js/config.js         Dirección, horarios y mapa definitivo.
+assets/js/config.js         Dirección, horario, mapa e ID opcional de GA4.
+robots.txt / sitemap.xml    Instrucciones de rastreo e índice del sitio.
 assets/vendor/bootstrap.min.css   Bootstrap local; incluye aviso de licencia.
 assets/img/favicon.svg      Símbolo gráfico del sitio (no fotografía clínica).
 
@@ -44,30 +45,34 @@ Coral #E8514B / blanco #FFFFFF / fondo suave #F4F8FB / texto #17313F
 La tipografía es local del sistema para no depender de servicios externos.
 
 DATOS USADOS DE LA MAQUETA
-Nombre: Dr. Vicente Barreto Peña.
+Nombre: Dr. Vicente Martín Barreto Peña.
+Cirujano Dentista, especialista en Endodoncia.
+COP 33909 · RNE 03787.
+Centro Odontológico Dr. Barreto.
+Dirección: Urb. Vipol Naranjal Mz. F Lt. 09, San Martín de Porres, Lima.
 Más de 10 años de experiencia clínica y académica.
 Más de 5000 tratamientos; 100% práctica bajo microscopio.
 Docencia universitaria USMP. Aumento indicado: hasta 20x.
-San Martín de Porres, Lima. Lunes a sábado, horas pendientes.
+El horario detallado aún está pendiente de confirmación.
 WhatsApp proporcionado: +51 960 359 369.
 Estas afirmaciones proceden de los materiales suministrados, no de una
 verificación independiente. Confirmarlas antes de publicar la web definitiva.
-No se han añadido títulos, colegiatura, premios ni certificados inventados.
+No se han añadido premios ni certificados no proporcionados.
 
 PENDIENTES PARA LA VERSIÓN DEFINITIVA
 - Retrato profesional para portada y segunda fotografía para perfil.
 - Fotografía real del microscopio y del consultorio.
 - Radiografías antes/después, explicación y fechas de seguimiento.
 - Testimonios reales autorizados; la maqueta no verifica las citas de pacientes.
-- Dirección exacta, referencia de llegada y horario detallado.
-- Colegiatura y credenciales que el doctor desee publicar.
+- Horario de atención.
+- ID de medición GA4 para habilitar el reporte de clics en WhatsApp.
 - Maqueta y contenidos definitivos de Cursos.
 
 CÓMO AÑADIR FOTOS
 Guarda los archivos optimizados dentro de assets/img/.
 En el HTML correspondiente, reemplaza el bloque completo
 <div class="media-placeholder ...">...</div> por, por ejemplo:
-<img src="assets/img/dr-barreto.webp" alt="Dr. Vicente Barreto Peña"
+<img src="assets/img/dr-barreto.webp" alt="Dr. Vicente Martín Barreto Peña"
      width="800" height="1000" class="real-photo">
 Añade en styles.css:
 .real-photo { width:100%; height:100%; min-height:340px;
@@ -78,22 +83,25 @@ radiografías; añade únicamente material con autorización para su publicació
 Los marcadores son deliberadamente explícitos: no representan fotos reales.
 
 MAPA Y DIRECCIÓN
-El mapa actual muestra San Martín de Porres como zona de referencia.
-NO marca una clínica ni se presenta como la dirección exacta.
-El botón 'Solicitar ubicación' pregunta la dirección por WhatsApp.
-Cuando dispongas de la ubicación:
-1. Abre Google Maps, ubica el consultorio y elige Compartir > Insertar mapa.
-2. Copia SOLO la URL del atributo src del iframe.
-3. En assets/js/config.js completa address, hours, mapsEmbedUrl y
-   mapsDirectionsUrl (enlace de Maps para llegar al consultorio).
-4. Para que la dirección también se vea sin JavaScript, actualiza además
-   los textos y el iframe de index.html. Actualiza privacidad.html.
-Solo se aceptan en configuración URLs HTTPS de Google Maps.
+El mapa usa las coordenadas del perfil de Google Maps "Centro Odontológico Dr.
+Barreto", cuya ficha indica Mz. F Lt. 09 en Urb. Vipol Naranjal. El enlace de
+indicaciones usa el mismo pin. Confirma que la ficha sea la correcta: Google
+Maps muestra un teléfono distinto al del sitio. El horario se agrega en hours
+cuando se confirme. La dirección visible y el mapa inicial de index.html
+también están definidos como respaldo si JavaScript no carga.
 
-WHATSAPP Y CONTACTO
+SEO Y DOMINIO
+Open Graph y canonical apuntan a https://drbarreto.netlify.app; la imagen de
+compartir está en assets/img/og-card.png. robots.txt y sitemap.xml usan esa
+misma dirección. Al comprar un dominio, reemplaza todas las apariciones de
+drbarreto.netlify.app por el dominio nuevo.
+
+WHATSAPP, CONTACTO Y ANALÍTICA
 Todos los botones llevan a https://wa.me/51960359369.
 Los botones de tratamiento incluyen mensajes específicos.
 El selector de contacto prepara un mensaje; no envía mensajes por sí solo.
+Los clics emiten el evento whatsapp_click. GA4 permanece apagado hasta definir
+gaMeasurementId en assets/js/config.js con el ID G-... de la propiedad.
 La cita requiere confirmación del consultorio: no hay calendario ni backend.
 No se guardan datos de pacientes en esta web ni se simula una reserva.
 
