@@ -1,14 +1,6 @@
 DR. VICENTE MARTÍN BARRETO PEÑA — SITIO INFORMATIVO
 =========================================
 
-ABRIR LA WEB
-1. Extrae TODO el ZIP (no abras el HTML dentro del archivo comprimido).
-2. Abre la carpeta dr-barreto.
-3. Haz doble clic en index.html.
-No necesitas instalar nada, usar terminal, localhost, servidor ni compilar.
-HTML, CSS, JavaScript y Bootstrap 5.3.3 están incluidos localmente.
-Internet solo es necesario para WhatsApp, Google Maps y enlaces externos.
-
 PÁGINAS
 index.html                 Inicio: las secciones informativas y el contacto.
 tratamientos.html          Cinco servicios, explicación y proceso de atención.
@@ -17,7 +9,8 @@ testimonios.html           Espacio reservado para reseñas verificadas.
 galeria.html               Galería con filtros de consultorio, tecnología y doctor.
 sobre-mi.html              Perfil y enfoque profesional.
 preguntas-frecuentes.html  Diez preguntas desplegables.
-cursos.html                Página reservada para la segunda maqueta.
+cursos.html                Formación: seis secciones y dos modalidades.
+metodologia.html           Detalle de los cuatro pasos de enseñanza.
 privacidad.html            Descripción de WhatsApp, mapa y datos.
 
 ARCHIVOS COMPARTIDOS
@@ -66,7 +59,9 @@ PENDIENTES PARA LA VERSIÓN DEFINITIVA
 - Testimonios reales autorizados; la maqueta no verifica las citas de pacientes.
 - Horario de atención.
 - ID de medición GA4 para habilitar el reporte de clics en WhatsApp.
-- Maqueta y contenidos definitivos de Cursos.
+- Fotografías reales para la página de Cursos y los talleres.
+- Testimonios de alumnos autorizados para publicar.
+- Fechas, duración y detalles de cada modalidad, cuando se confirmen.
 
 CÓMO AÑADIR FOTOS
 Guarda los archivos optimizados dentro de assets/img/.
@@ -105,10 +100,16 @@ gaMeasurementId en assets/js/config.js con el ID G-... de la propiedad.
 La cita requiere confirmación del consultorio: no hay calendario ni backend.
 No se guardan datos de pacientes en esta web ni se simula una reserva.
 
-CURSOS — SEGUNDA ETAPA
-El menú ya enlaza cursos.html. Sustituye el contenido de <main> conservando
-el encabezado, pie, CSS y JavaScript compartidos. Están enumeradas las seis
-secciones previstas, sin inventar precios, fechas ni ofertas.
+FORMACIÓN PARA ODONTÓLOGOS
+cursos.html contiene portada, motivos para formarte, las modalidades
+Entrenamiento personalizado 1:1 y Talleres modulares, una vista resumida de
+la metodología, espacios para testimonios autorizados e inscripción por
+WhatsApp. metodologia.html desarrolla por separado los cuatro pasos:
+Fundamento, Demostración, Práctica y Aplicación. No se ofrecen productos ni
+pagos en línea. Las fotografías y reseñas son marcadores hasta recibir
+material real autorizado; no se publican precios, fechas ni testimonios
+inventados. El enlace "Conoce la metodología paso a paso" abre
+metodologia.html.
 
 VERIFICACIÓN DE ESTA ENTREGA
 Comprobación estática de páginas, archivos, enlaces internos y fragmentos.
