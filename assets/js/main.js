@@ -30,6 +30,20 @@
   document
     .querySelectorAll("[data-year]")
     .forEach((el) => (el.textContent = new Date().getFullYear()));
+  document.querySelectorAll(".youtube-video-link img").forEach((image) => {
+    const hideUnavailableThumbnail = () => {
+      if (image.naturalWidth <= 120) image.hidden = true;
+    };
+    image.addEventListener("load", hideUnavailableThumbnail, { once: true });
+    image.addEventListener(
+      "error",
+      () => {
+        image.hidden = true;
+      },
+      { once: true },
+    );
+    if (image.complete) hideUnavailableThumbnail();
+  });
   const trackWhatsappClick = (url, text, onComplete) => {
     const clickData = {
       event: "whatsapp_click",

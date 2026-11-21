@@ -358,6 +358,18 @@ img {
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 120px 8px 8px 8px;
 }
+.portrait-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 120px 8px 8px 8px;
+}
+.doctor-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
 .portrait:after,
 .portrait:before {
   border-color: rgba(255, 255, 255, 0.16);
@@ -389,6 +401,89 @@ img {
 .image-wrap {
   position: relative;
   padding: 0 20px 25px 0;
+}
+.detail-video-wrap {
+  padding-bottom: 0;
+}
+.short-video-frame {
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #000;
+  margin: 0 auto;
+}
+.youtube-video-link {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: linear-gradient(145deg, #17313f, #071722);
+  color: var(--white);
+  text-decoration: none;
+}
+.youtube-video-link:before {
+  position: absolute;
+  inset: 45% 0 0;
+  z-index: 1;
+  content: "";
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.78));
+}
+.youtube-video-link img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.88;
+}
+.youtube-play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  display: grid;
+  width: 68px;
+  height: 48px;
+  place-items: center;
+  border-radius: 14px;
+  background: #e62117;
+  color: var(--white);
+  font-size: 23px;
+  transform: translate(-50%, -50%);
+}
+.youtube-video-title {
+  position: absolute;
+  top: calc(50% + 40px);
+  right: 12px;
+  left: 12px;
+  z-index: 2;
+  color: var(--white);
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.8);
+}
+.youtube-video-caption {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  left: 16px;
+  z-index: 2;
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+}
+.youtube-video-link:focus-visible {
+  outline: 3px solid var(--blue-light);
+  outline-offset: -3px;
+}
+.detail-video-wrap .image-badge {
+  position: static;
+  width: fit-content;
+  margin: 14px 0 0 auto;
 }
 .image-badge {
   position: absolute;
@@ -511,6 +606,12 @@ img {
 .case-pair {
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+.case-pair > img {
+  display: block;
+  grid-column: 1 / -1;
+  width: 100%;
+  height: auto;
 }
 .xray {
   min-height: 190px;
@@ -840,6 +941,22 @@ footer {
 .treatment-detail .lead {
   font-size: 18px;
 }
+.treatment-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 28px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+.treatment-video {
+  width: min(100%, 360px);
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
+  margin-top: 28px;
+  border-radius: 8px;
+  background: #000;
+}
 .steps {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -848,6 +965,24 @@ footer {
 }
 .steps.three {
   grid-template-columns: repeat(3, 1fr);
+}
+.steps.three .step-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+.steps.three .step-icon {
+  display: block;
+  width: 76px;
+  height: 76px;
+  flex: 0 0 76px;
+}
+.steps.three .step-heading span {
+  margin-bottom: 8px;
+}
+.steps.three .step-heading h3 {
+  margin-bottom: 0;
 }
 .steps > div {
   border-top: 2px solid var(--blue);
@@ -1585,6 +1720,11 @@ details p {
   .steps,
   .steps.three {
     grid-template-columns: 1fr;
+  }
+  .steps.three .step-icon {
+    width: 64px;
+    height: 64px;
+    flex-basis: 64px;
   }
   .steps {
     gap: 22px;

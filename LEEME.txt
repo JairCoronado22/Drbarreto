@@ -19,11 +19,13 @@ assets/js/main.js           Menú móvil, galería, mensaje de cita y configurac
 assets/js/config.js         Dirección, horario, mapa e ID opcional de GA4.
 robots.txt / sitemap.xml    Instrucciones de rastreo e índice del sitio.
 assets/vendor/bootstrap.min.css   Bootstrap local; incluye aviso de licencia.
-assets/img/favicon.svg      Símbolo gráfico del sitio (no fotografía clínica).
+assets/img/favicon.svg      Símbolo gráfico del sitio.
+assets/img/*.png            Retrato, radiografías e imágenes clínicas compartidas.
+index.html y tratamientos.html incluyen Shorts incrustados y adaptables.
 
 ORDEN DE LA PORTADA
-1. Gancho, foto pendiente, llamada a agendar y cifras de confianza.
-2. Microscopio y beneficios para el paciente.
+1. Gancho, retrato del doctor, llamada a agendar y cifras de confianza.
+2. Video de odontología en los detalles y beneficios para el paciente.
 3. Cinco tratamientos y tarjeta de evaluación.
 4. Casos y espacio para testimonios.
 5. Franja para abordar el miedo, en azul oscuro.
@@ -53,9 +55,8 @@ verificación independiente. Confirmarlas antes de publicar la web definitiva.
 No se han añadido premios ni certificados no proporcionados.
 
 PENDIENTES PARA LA VERSIÓN DEFINITIVA
-- Retrato profesional para portada y segunda fotografía para perfil.
-- Fotografía real del microscopio y del consultorio.
-- Radiografías antes/después, explicación y fechas de seguimiento.
+- Segunda fotografía para perfil y fotografía real del consultorio.
+- Radiografías, explicación y seguimiento de los casos 02 y 03.
 - Testimonios reales autorizados; la maqueta no verifica las citas de pacientes.
 - Horario de atención.
 - ID de medición GA4 para habilitar el reporte de clics en WhatsApp.
